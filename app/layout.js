@@ -4,6 +4,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 
 import {SessionProvider} from "next-auth/react"
+import Navbar from '@/components/Navbar'
+import "../node_modules/react-quill/dist/quill.snow.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +19,9 @@ export default function RootLayout({ children,session }) {
     
     <html lang="en">
       <SessionProvider session={session}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar/>
+        {children}</body>
     </SessionProvider>
     </html>
   )
